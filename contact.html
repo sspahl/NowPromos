@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Site wide javascript -->
+    <script src="./scripts/includes.js"></script>
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+        <!-- JQuery -->
+        <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        -->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <!-- React -->
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+      
+        <!-- Load HTML includes -->
+        <script type='text/javascript'>
+            $(document).ready(function(){
+
+                // Enable tooltip styling
+                $( "#search-box" ).tooltip({position: { my: "left+15 center", at: "right center" }}); 
+                $( "#np-topnav" ).tooltip({position: { my: "center top+15", at: "center bottom" }}); 
+            });   
+
+        </script>
+
+        <!-- Nowpromos CSS definitions -->
+        <link href="./css/nowpromos.css" rel="stylesheet">
+
+        <title>NowPromos - We do it.  We do it right.  We do it right NOW!</title>
+
+        <!-- Styles for this page -->
+        <style>
+            /* Preload images
+            :root:before {
+              content: url(./images/nowpromos.jpg)
+                       url(./images/left-box.gif);
+              /* partial fallback 
+              background-image: url(./images/nowpromos.jpg);
+              background-image: url(./images/left-box.gif);
+              visibility: hidden;
+              position: absolute;
+              left: -999em;
+            }*/
+        </style>
+    </head>
+    <body>
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+        <!-- Page container -->
+        <div class="container">
+        <header id="np-header"></header>
+
+        <section>
+        <!-- Top-level site navigation -->
+        <div class="row"><nav>
+            <div id="np-topnav" class="col"></div>
+        </nav></div>
+
+        <div class="row">
+        <!-- Left Search Bar and Category Links -->
+        <aside class="col-2">
+        <div id="search-box"></div>
+        <div id="categories-box"></div>
+        <div id="brand-box"></div>
+        <div id="contact-box"></div>
+        <div id="address-box"></div>
+        </aside>
+
+        <!-- Main Body Content -->
+        <article id="content" class="col-10">
+            <h1><i><span class="np-red">Now</span>Promos</i> Information Request Form</h1>
+            <form name="contact" action="mailto:steves@nowpromos.com" method="post" enctype="application/x-www-form-urlencoded" >
+                <div class="row">
+                    <p>Fields marked with an (<span class="np-red">*</span>) are required.</p>
+                </div>
+                <div class="row g-3 mb-3 align-items-center">
+                    <div class="col-2"> 
+                        <label for="first-name" class="form-label"><span class="np-red">*</span> First Name</label>
+                    </div>
+                    <div class="col"> 
+                        <input type="text" class="form-control" name="first-name" required aria-required="true" aria-describedby="firstName">
+                    </div>
+                </div>
+                <div class="row g-3 mb-3 align-items-center">
+                    <div class="col-2"> 
+                        <label for="last-name" class="form-label"><span class="np-red">*</span> Last Name</label>
+                    </div>
+                    <div class="col"> 
+                        <input type="text" class="form-control" name="last-name" required aria-required="true" aria-describedby="lastName">
+                    </div>
+                </div>
+                <div class="row g-3 mb-0 align-items-center">
+                    <div class="col-2"> 
+                        <label for="email" class="form-label"><span class="np-red">*</span> Email address</label>
+                    </div>
+                    <div class="col"> 
+                        <input type="email" class="form-control" name="email" required aria-required="true" aria-describedby="emailContact">
+                    </div>
+                </div>
+                <div class="row mb-0">
+                    <div class="col offset-md-2" >
+                        <p id="emailHelp" class="col-md-8">We'll never share your email with anyone else.</p>
+                    </div>
+                </div>
+                <div class="row g-3 mb-3 align-items-center">
+                    <div class="col-2">
+                        <label for="company-name" class="form-label">Company</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="company-name" aria-describedby="companyName">
+                    </div>
+                </div>
+                <div class="row g-3 mb-3 align-items-center">
+                    <div class="col-2" >
+                        <label for="address-name" class="form-label">Address</label>
+                    </div>
+                    <div class="col" >
+                        <input type="text" class="form-control" name="address-name" aria-describedby="addressName">
+                    </div>
+                </div>
+                <div class="row g-3 mb-3 align-items-center">
+                    <div class="col-2" >
+                        <label for="city-name" class="form-label">City</label>
+                    </div>
+                    <div class="col" >
+                        <input type="text" class="form-control" name="city-name" aria-describedby="cityName">
+                    </div>
+                </div>
+                <div class="row g-3 mb-3 align-items-center">
+                    <div class="col-2" >
+                        <label for="state-name" class="form-label">State</label>
+                    </div>
+                    <div class="col-2" >
+                        <input type="text" class="form-control" name="state" aria-describedby="stateName">
+                    </div>
+                    <div class="col-2" >
+                        <label for="zip-name" class="form-label">Zip Code</label>
+                    </div>
+                    <div class="col-2" >
+                        <input type="text" class="form-control" name="zip" aria-describedby="zipNumber">
+                    </div>
+                </div>
+                <div class="row g-3 mb-3 align-items-center">
+                    <div class="col-2" >
+                        <label for="phone" class="phone-label"><span class="np-red">*</span> Phone #</label>
+                    </div>
+                    <div class="col-2" >
+                        <input type="tel" class="form-control" name="phone" required aria-required="true" aria-describedby="phoneNumber">
+                    </div>
+                    <div class="col-2" >
+                        <label for="ext" class="ext-label">Extension</label>
+                    </div>
+                    <div class="col-2" >
+                        <input type="text" class="form-control" name="ext" aria-describedby="extNumber">
+                    </div>
+                </div>
+                <div class="row g-3 mb-3 align-items-start">
+                    <div class="col-2 pt-1" >
+                        <label for="questions" class="form-label">Questions/Comments</label>
+                    </div>
+                    <div class="col" >
+                        <textarea class="form-control" rows="5" name="questions" aria-describedby="questionsComments"></textarea>
+                    </div>
+                </div>
+                <div class="row g-3 mb-3 align-items-center">
+                    <div class="col-auto offset-md-6">
+                        <input type="submit" value="Submit" class="btn btn-primary me-2" />
+                        <input type="reset" value="Clear" class="btn btn-secondary" />
+                    </div>
+                </div>
+            </form>
+        </article>
+        </div>
+        </section>
+
+        <!-- Footer section -->
+        <footer id="footer" class="np-blue" ></footer>
+        </div>
+
+
+        <image src="./images/nowpromos.jpg" width="1" height="1" border="0">
+        <image src="./images/left-box.gif" width="1" height="1" border="0">
+
+        </image>
+        <!-- React navigation components - temporary includes -->
+        <script type="text/babel">
+            class NPHeader extends React.Component {
+              render() {
+                return (
+                <table id="header-table" width="100%">
+                <tr id="header-logo">
+                    <td rowspan="2" width="68"><img src="./images/nowpromos.jpg" /></td>
+                    <td id="header-company"><a href="./index.html"><span class="np-red">NOW</span><span class="np-blue">PROMOS</span></a></td>
+                    <td id="header-description"><span id="header-description1">Promotional Products & Advertising Specialties</span><br /><span>Contact us for all your promotional product needs</span></td>
+                </tr>
+                <tr id="header-bottomrow">
+                    <td><span class="np-blue">We do it! <span class="np-red">&#8226;</span> We do it right! <span class="np-red">&#8226;</span> We do it right now!</span></td>
+                    <td id="header-call">Call us: 1-818-753-3663</td>
+                </tr>
+                </table>
+                );
+              }
+
+            }
+
+            class NPTopNav extends React.Component {
+              render() {
+                return (
+                    <div>
+                    <a href="" title="Check Back Soon">Request Catalog</a>
+                    <a href="./contact.html">Contact Us</a>
+                    <a href="./buy.html">How to Buy</a>
+                    <a href="./specials.html">Specials</a>
+                    <a href="./index.html">Home</a>
+                    </div>
+                );
+              }
+            }
+            
+            class NPSearch extends React.Component {
+              render() {
+                return (
+                    <div>
+                    <div><img src="images/left-box.gif" /> Product Search</div>
+                    <form action="#">
+                    <input type="text" placeholder="Search.." name="search" title="Products not available at this time." />
+                    <button type="submit" title="Products not available at this time.">Go!</button>
+                    </form>
+                    <a href="#" title="Products not available at this time." >Advanced Search</a>
+                    </div>
+                );
+              }
+            }
+
+            class NPCategories extends React.Component {
+              render() {
+                return (
+                    <div>
+                    <div><img src="images/left-box.gif" /> Product Categories</div>
+                    <ul>
+                    <li><a class="left-category" href="#" title="Products Not Available">Apparel and Caps</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Automotive Accessories</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Awards and Recognition</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Bags and Backpacks</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Badges and Magnets</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Office Items</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Calendars</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Clocks and Watches</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Computer Accessories</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Journals and Notepads</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Journals and Notepads</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Drinkware</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Electronics</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Fitness and Safety</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Food and Edibles</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Games and Novelties</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Home and Housewares</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Jewelry</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Luggage and Travel</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Pocket and Purse</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Sports and Leisure</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Tools</a></li>
+                    <li><a class="left-category" href="#" title="Products Not Available">Writing Instruments</a></li>
+                    </ul>
+                    </div>
+                );
+              }
+            }
+
+            class NPBrand extends React.Component {
+              render() {
+                return (
+                    <div>
+                        <img src="images/left-box.gif" />
+                        <a href="https://www.4logoapparel.com/" target="_blank"> Brand Name<br />Apparel Catalog</a>
+                    </div>
+                );
+              }
+            }
+
+            class NPContact extends React.Component {
+              render() {
+                return (
+                    <div>
+                        Phone:	<span>818.753.3663</span><br />
+                        Email:	<a href="mailto:customerservice@nowpromos.com">customerservice@<br />nowpromos.com</a>
+                    </div>
+                );
+              }
+            }
+
+            class NPAddress extends React.Component {
+              render() {
+                return (
+                    <div>
+                        <span>NOWPROMOS</span><br />
+                        The Penthouse @ 1234 The Street<br />
+                        Old Address, California 90000
+                    </div>
+                );
+              }
+            }
+            
+            class NPFooter extends React.Component {
+              render() {
+                return (
+                    <p>2001-2012 Nowpromos<br />
+                    The Penthouse @ 1234 The Street<br />
+                    Old Address, California 90000</p>
+                );
+              }
+            }
+            
+
+            ReactDOM.render(<NPHeader  />, document.getElementById('np-header'))
+            ReactDOM.render(<NPTopNav />, document.getElementById('np-topnav'))
+            ReactDOM.render(<NPSearch />, document.getElementById('search-box'))
+            ReactDOM.render(<NPCategories />, document.getElementById('categories-box'))
+            ReactDOM.render(<NPBrand />, document.getElementById('brand-box'))
+            ReactDOM.render(<NPContact />, document.getElementById('contact-box'))
+            ReactDOM.render(<NPAddress />, document.getElementById('address-box'))
+            ReactDOM.render(<NPFooter />, document.getElementById('footer'))
+
+        </script>
+
+    </body>
+</html>
